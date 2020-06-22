@@ -32,6 +32,7 @@ if (s.length !== t.length) {
 
 let map = {}
 
+//Map all frequencies of characters into the hash table
 for (let i = 0; i < s.length; i++) {
     if (map[s.charAt(i)] === undefined) {
         map[s.charAt(i)] = 1
@@ -40,12 +41,16 @@ for (let i = 0; i < s.length; i++) {
     }
 }
 
+//Decrement the frequencies as you increment over the other string
 for (let i = 0; i < t.length; i++) {
-    if (map[t.charAt(i)]) {
+    if (map[t.charAt(i)] !== undefined) {
         map[t.charAt(i)]--
+    } else {
+        return false
     }
 }
 
+//Check to see all frequencies are 0
 for (let value of Object.values(map)) {
     if (value !== 0) {
         return false
