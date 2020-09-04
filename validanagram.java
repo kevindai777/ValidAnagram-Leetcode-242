@@ -1,4 +1,4 @@
-//Solution written in Java, using a character array
+//Java Solution, this time using a character array
 
 class Solution {
     public boolean isAnagram(String s, String t) {
